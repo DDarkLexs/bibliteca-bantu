@@ -1,7 +1,7 @@
 export default {
     app:3300,
 
-    mySQLConnection: {
+    mySQL: {
           client: 'mysql',
             connection: {
                 host : '127.0.0.1',
