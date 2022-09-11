@@ -8,12 +8,8 @@ export default {
                 port : 3306,
                 user : 'admin',
                 password : '',
-                database : 'bibliotecaBantu'
-            }
-                    
+                database : 'biblioteca_bantu'
+        }      
     }
-
-
-
 
 }
