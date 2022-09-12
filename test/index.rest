@@ -1,1 +1,3 @@
-GET http://localhost:3030/translate
+GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
+
+// POST http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate&palavra=epako

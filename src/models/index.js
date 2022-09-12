@@ -1,8 +1,14 @@
-//import knex from 'knex'
-import { mySQL } from '../configs'
 
-//const database = knex(mySQL);
+const knex = require('knex')({
+    client: 'mysql',
+      connection: {
+          port : 3306,
+          host: 'localhost',
+          user: 'root',
+          password : '',
+          database : 'biblioteca_bantu'
+  }      
+});
 
 
-
-export default mySQL
+export default knex
