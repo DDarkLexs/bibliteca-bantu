@@ -1,8 +1,8 @@
-//import knex from 'knex'
+import knexModule from 'knex'
 import { mySQL } from '../configs'
 
-//const database = knex(mySQL);
+const knex = knexModule(mySQL);
 
 
 
-export default mySQL
+export default knexModule
