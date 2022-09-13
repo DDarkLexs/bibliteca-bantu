@@ -1,0 +1,56 @@
+{
+    "portuguesParaUmbundu":[
+        { 
+            "portugues":"abacate",
+            "umbundu":"epako"
+        },
+
+        { 
+            "portugues":"abaixar",
+            "umbundu":"yunguka"
+        },
+
+        {
+            "portugues":"abanar",
+            "umbundu":"tununya"
+        },
+
+        {
+            "portugues":"abandonado",
+            "umbundu":"ulikalelo"
+      
+        },
+
+        {
+            "portugues":"abastado",
+            "umbundu":"oku teta"
+        }
+        
+    ],
+
+    "portuguesParaChokwe":[
+        { 
+            "portugues":"pessoas",
+            "chokwe":"atu"
+        },
+        { 
+            "portugues":"cadeia",
+            "chokwe":"camenga"
+        },
+        { 
+            "portugues":"resistente",
+            "chokwe":"capata"
+        },
+        { 
+            "portugues":"conhecimento",
+            "chokwe":"mana"
+        },
+        { 
+            "portugues":"amor",
+            "chokwe":"zango"
+        }
+
+
+    ]
+
+}

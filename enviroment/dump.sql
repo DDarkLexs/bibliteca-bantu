@@ -6,13 +6,13 @@ DROP TABLE IF EXISTS portugues;
 
 CREATE TABLE portugues (
 id_pt INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-palavra TEXT NOT NULL,
-codigo TEXT NOT NULL);
+palavra TEXT,
+codigo TEXT);
 
 CREATE TABLE chokwe (
 id_chokwe INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-palavra TEXT NOT NULL,
-codigo TEXT NOT NULL UNIQUE);
+palavra TEXT ,
+codigo TEXT );
 
 CREATE TABLE traduzido (
 id_traduzido INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -24,8 +24,8 @@ id_chokwe INT(11) NOT NULL);
 
 CREATE TABLE umbundu (
 id_umbundu INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-palavra TEXT NOT NULL,
-codigo TEXT NOT NULL UNIQUE);
+palavra TEXT,
+codigo TEXT);
 
 ALTER TABLE traduzido ADD CONSTRAINT traduzido_id_pt_portugues_id_pt FOREIGN KEY (id_pt) REFERENCES portugues(id_pt) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE traduzido ADD CONSTRAINT traduzido_id_umbundu_umbundu_id_umbundu FOREIGN KEY (id_umbundu) REFERENCES umbundu(id_umbundu) ON DELETE CASCADE ON UPDATE CASCADE;
