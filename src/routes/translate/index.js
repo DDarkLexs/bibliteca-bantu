@@ -15,17 +15,16 @@ export default (app) => {
     },tMiddleware.insertAll)
 
 
-
     app.route('/translate/portugueseToUmbundu')
     .get((req, res, next) => {
         console.log('portugues para umbundu')
         next()
-    },tMiddleware.portugueseToUmbundu)
+    },tMiddleware
+    .portugueseToUmbundu)
     .post((req,res,next) => {
         console.log(`inserir de portuguese para Umbundu`)
         next()
     }, tMiddleware.insertportugueseToUmbundu)
-
     app.route('/translate/portugueseToChokwe')
     .get((req, res, next) => {
         console.log('portugues para Chokwe')

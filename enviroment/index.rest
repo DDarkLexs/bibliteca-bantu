@@ -1,4 +1,4 @@
-GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
+# GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
 
 
 # GET http://localhost:3030/translate/portugueseToChokwe?palavra=Conhecimento
