@@ -1,10 +1,11 @@
-GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
+# GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
 
 
 # GET http://localhost:3030/translate/portugueseToChokwe?palavra=Conhecimento
 
+GET http://localhost:3030/translate/portugueseToUmbunduAndChokwe?palavra=ver
 
 # POST http://localhost:3030/translate/portugueseToUmbundu?portugues=abacate&umbundu=epako
 
 
-# POST http://localhost:3030/translate/inserirTodo
+POST http://localhost:3030/translate/inserirTodo
