@@ -34,7 +34,6 @@ export default (app) => {
         next()
     },tMiddleware.portugueseToUmbundu)
 
->>>>>>> 6dfc5f000af57e82019e90eeb99d467730de3930
     .post((req,res,next) => {
         console.log(`inserir de portuguese para Umbundu`)
         next()
