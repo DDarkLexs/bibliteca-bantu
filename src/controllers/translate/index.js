@@ -13,6 +13,40 @@ import { ptAndchokweAndumbundu } from '../../../enviroment/newData.json'
 export default  {
 
    
+    async universal(req,res,next){
+        try {
+            
+            const { key , palavra , para } = req.query
+
+            const query = (await knex.raw(`
+            SELECT
+            portugues.palavra AS portugues, 
+            umbundu.palavra AS umbundu,
+            chokwe.palavra AS chokwe,
+            ${para}.palavra as significado
+            FROM traduzido t
+            INNER JOIN portugues ON portugues.id_pt = t.id_pt
+            INNER JOIN umbundu ON umbundu.id_umbundu = t.id_umbundu
+            INNER JOIN chokwe ON chokwe.id_chokwe = t.id_chokwe
+            WHERE ${key}.palavra = "${palavra}";`))[0][0]
+
+
+            console.log(query)
+       
+            res.json({ response:true, query })
+                
+                
+            } catch (error) {
+
+                res.json({ response:false , msg:error })
+                
+                console.log(error)
+            
+        }
+            
+    },
+
+
     async portugueseToChokwe(req,res,next){
         try {
             

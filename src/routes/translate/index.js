@@ -14,6 +14,13 @@ export default (app) => {
 
     },tMiddleware.insertAll)
 
+    app.route('/translate/universal')
+    .get((req, res, next) => {
+        console.log('universal para portugues, umbundu e chokwe')
+        next()
+    },tMiddleware.universal)
+    
+    
     app.route('/translate/portugueseToUmbunduAndChokwe')
     .get((req, res, next) => {
         console.log('portugues para umbundu e chokwe')
