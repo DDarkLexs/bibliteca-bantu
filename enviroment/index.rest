@@ -5,7 +5,7 @@
 GET http://localhost:3030/translate/universal?key=portugues&palavra=olho&para=chokwe
 
 
-# GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
+# # GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
 
 
 # GET http://localhost:3030/translate/portugueseToChokwe?palavra=Conhecimento
