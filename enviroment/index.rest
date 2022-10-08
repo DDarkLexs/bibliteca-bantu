@@ -2,7 +2,7 @@
 
 
 
-GET http://localhost:3030/translate/universal?key=portugues&palavra=olho&para=chokwe
+# GET http://localhost:3030/translate/universal?key=portugues&palavra=olho&para=chokwe
 
 
 # # GET http://localhost:3030/translate/portugueseToUmbundu?palavra=abacate
@@ -15,4 +15,4 @@ GET http://localhost:3030/translate/universal?key=portugues&palavra=olho&para=ch
 # POST http://localhost:3030/translate/portugueseToUmbundu?portugues=abacate&umbundu=epako
 
 
-POST http://localhost:3030/translate/inserirTodo
+POST http://localhost:3030/api/translate/inserirTodo

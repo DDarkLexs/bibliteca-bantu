@@ -20,10 +20,11 @@ export default  {
 
             const query = (await knex.raw(`
             SELECT
-            portugues.palavra AS portugues, 
-            umbundu.palavra AS umbundu,
-            chokwe.palavra AS chokwe,
-            ${para}.palavra as significado
+            --portugues.palavra AS portugues, 
+            -- umbundu.palavra AS umbundu,
+            -- chokwe.palavra AS chokwe,
+            ${para}.palavra AS significado,
+            ${key}.palavra AS ${key}
             FROM traduzido t
             INNER JOIN portugues ON portugues.id_pt = t.id_pt
             INNER JOIN umbundu ON umbundu.id_umbundu = t.id_umbundu
@@ -31,7 +32,8 @@ export default  {
             WHERE ${key}.palavra = "${palavra}";`))[0][0]
 
 
-            console.log(query)
+            if(!query) throw `Não existe este significado "${palavra}" na base de dados`
+           // console.log(query)
        
             res.json({ response:true, query })
                 
@@ -39,8 +41,8 @@ export default  {
             } catch (error) {
 
                 res.json({ response:false , msg:error })
-                
-                console.log(error)
+             
+                // console.log(error)
             
         }
             
@@ -233,15 +235,11 @@ export default  {
                     id_umbundu: id_umbundu[0],
                     id_chokwe:id_chokwe[0]
                 })
-                    console.log(`${id_traduzido} -> ${portugues} = ${chokwe} = ${umbundu}`)                    
+                    console.log(`${id_traduzido} -> ${portugues} = ${chokwe} = ${umbundu} [sucesso]`)                    
             }
 
-
-            
-
             res.json({ response:true, /* query: {id_chokwe,id_umbundu,id_pt } */ })
-                
-                
+                                
             } catch (error) {
 
                 res.json({ response:false, msg:error })

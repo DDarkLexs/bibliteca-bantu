@@ -3,7 +3,7 @@ const knex = require('knex')({
     client: 'mysql',
       connection: {
           port : 3306,
-          host: 'localhost',
+          host: '192.168.2.1',
           user: 'root',
           password : '',
           database : 'biblioteca_bantu'

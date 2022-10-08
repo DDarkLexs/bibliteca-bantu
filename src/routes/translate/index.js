@@ -6,7 +6,7 @@ import tMiddleware from '../../controllers/translate'
 
 export default (app) => {
 
-    app.route('/translate/inserirTodo')
+    app.route('/api/translate/inserirTodo')
     .post((req, res, next) => {
         console.log('Inserindo de portugues para chokwe e umbuntu!')
         
@@ -14,21 +14,21 @@ export default (app) => {
 
     },tMiddleware.insertAll)
 
-    app.route('/translate/universal')
+    app.route('/api/translate/universal')
     .get((req, res, next) => {
-        console.log('universal para portugues, umbundu e chokwe')
+      //  console.log('universal para portugues, umbundu e chokwe')
         next()
     },tMiddleware.universal)
     
     
-    app.route('/translate/portugueseToUmbunduAndChokwe')
+    app.route('/api/translate/portugueseToUmbunduAndChokwe')
     .get((req, res, next) => {
         console.log('portugues para umbundu e chokwe')
         next()
     },tMiddleware.portugueseToUmbunduAndChokwe)
     
 
-    app.route('/translate/portugueseToUmbundu')
+    app.route('/api/translate/portugueseToUmbundu')
     .get((req, res, next) => {
         console.log('portugues para umbundu')
         next()
@@ -38,7 +38,7 @@ export default (app) => {
         console.log(`inserir de portuguese para Umbundu`)
         next()
     }, tMiddleware.insertportugueseToUmbundu)
-    app.route('/translate/portugueseToChokwe')
+    app.route('/api/translate/portugueseToChokwe')
     .get((req, res, next) => {
         console.log('portugues para Chokwe')
         next()
