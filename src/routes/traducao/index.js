@@ -1,6 +1,6 @@
 import asciiColorLog from 'ascii-color-log'
 const log = new asciiColorLog()
-import tMiddleware from '../../controllers/translate'
+import tMiddleware from '../../controllers/traducao'
 
 
 

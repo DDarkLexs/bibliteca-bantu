@@ -1,11 +1,11 @@
 
-import translation from './translate'
+import traducao from './traducao'
 import services from './services'
 import auth from './authentication'
 
 
 export default (app) => {
-    translation(app)
+    traducao(app)
     services(app)
     auth(app)
 } 
