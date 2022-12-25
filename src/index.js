@@ -9,20 +9,18 @@ import ASCIIColorLog from 'ascii-color-log';
 import os from "os"
 import routes from './routes/index'
 const log = new ASCIIColorLog();
-
+const PORT = process.env.PORT || 3030;
 
 const app = express()
 
 app.use(cors())
 
-
-const PORT = 3030
-app.use(cors())
 routes(app)
 
 
 
 app.use(express.static("src/public"))
+
 
  
 app.listen(PORT, async () => {

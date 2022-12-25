@@ -25,7 +25,7 @@ export default  {
             -- chokwe.palavra AS chokwe,
             ${para}.palavra AS significado,
             ${key}.palavra AS ${key}
-            FROM traduzido t
+            FROM traducao t
             INNER JOIN portugues ON portugues.id_pt = t.id_pt
             INNER JOIN umbundu ON umbundu.id_umbundu = t.id_umbundu
             INNER JOIN chokwe ON chokwe.id_chokwe = t.id_chokwe
@@ -40,7 +40,7 @@ export default  {
                 
             } catch (error) {
 
-                res.json({ response:false , msg:error })
+                res.sendStatus(400)
              
                 // console.log(error)
             
@@ -58,7 +58,7 @@ export default  {
             pt.palavra as portugues, 
             un.palavra as chokwe
             FROM portugues pt
-            INNER join traduzido t ON pt.id_pt = t.id_pt
+            INNER join traducao t ON pt.id_pt = t.id_pt
             INNER join chokwe un ON un.id_chokwe = t.id_chokwe
             where pt.palavra = '${req.query.palavra}';
             `))[0][0]
@@ -71,7 +71,7 @@ export default  {
                 
             } catch (error) {
                 
-                console.log(error)
+                res.sendStatus(400)
             
         }
             
@@ -92,7 +92,7 @@ export default  {
                 const id_umbundu = await knex('umbundu')
                 .insert({palavra:null , codigo:md5('nulo') })
                
-                const id_traduzido = await knex('traduzido')
+                const id_traducao = await knex('traducao')
                 .insert({
                     significado:'',
                     descricao:'',
@@ -111,7 +111,7 @@ export default  {
                 
             } catch (error) {
 
-                res.json({ response:false, msg:error })
+                res.sendStatus(400)
                 
                 
         }
@@ -125,7 +125,7 @@ export default  {
             pt.palavra AS portugues, 
             un.palavra AS umbundu
             FROM portugues pt
-            INNER join traduzido t ON pt.id_pt = t.id_pt
+            INNER join traducao t ON pt.id_pt = t.id_pt
             INNER join umbundu un ON un.id_umbundu = t.id_umbundu
             WHERE pt.palavra = '${req.query.palavra}';
             `))[0][0]
@@ -138,7 +138,7 @@ export default  {
         
         } catch (error) {
 
-            res.json({ response:false, msg: error })
+            res.sendStatus(400)
                
 
             
@@ -152,7 +152,7 @@ export default  {
             pt.palavra AS portugues, 
             un.palavra AS umbundu
             FROM portugues pt
-            INNER join traduzido t ON pt.id_pt = t.id_pt
+            INNER join traducao t ON pt.id_pt = t.id_pt
             INNER join umbundu un ON un.id_umbundu = t.id_umbundu
             WHERE pt.palavra = '${req.query.palavra}';
             `))[0][0]
@@ -165,7 +165,7 @@ export default  {
         
         } catch (error) {
 
-            res.json({ response:false, msg: error })
+            res.sendStatus(400)
                
 
             
@@ -186,7 +186,7 @@ export default  {
                 const id_chokwe = await knex('chokwe')
                 .insert({palavra:null , codigo:md5('nulo') })
                 
-                const id_traduzido = await knex('traduzido')
+                const id_traducao = await knex('traducao')
                 .insert({
                     significado:'',
                     descricao:'',
@@ -203,7 +203,7 @@ export default  {
                 
             } catch (error) {
 
-                res.json({ response:false, msg:error })
+                res.sendStatus(400)
                 
                 
         }
@@ -227,7 +227,7 @@ export default  {
                 const id_umbundu = await knex('umbundu')
                 .insert({palavra:umbundu , codigo:md5(umbundu) })
                
-                const id_traduzido = await knex('traduzido')
+                const id_traducao = await knex('traducao')
                 .insert({
                     significado:'',
                     descricao:'',
@@ -235,15 +235,14 @@ export default  {
                     id_umbundu: id_umbundu[0],
                     id_chokwe:id_chokwe[0]
                 })
-                    console.log(`${id_traduzido} -> ${portugues} = ${chokwe} = ${umbundu} [sucesso]`)                    
+                    console.log(`${id_traducao} -> ${portugues} = ${chokwe} = ${umbundu} [sucesso]`)                    
             }
 
             res.json({ response:true, /* query: {id_chokwe,id_umbundu,id_pt } */ })
                                 
             } catch (error) {
 
-                res.json({ response:false, msg:error })
-                
+                res.sendStatus(400)
                 
         }
             
