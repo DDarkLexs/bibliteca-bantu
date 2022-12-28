@@ -253,14 +253,3 @@ export default  {
 } 
 
 
-
-/* pt - umbundu
-    {
-        response:Boolean,
-        translation:{
-            primary:String,
-            secondary:String
-        }
-    }
-
-    */

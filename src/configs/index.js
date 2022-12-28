@@ -1,6 +1,5 @@
 import md5 from "md5"
 import jwt from "jsonwebtoken"
-
 const secretKey = md5("bibliotecaBantu")
 
 export function gerarSimboloDeAcesso(usuario) {
@@ -10,26 +9,32 @@ export function gerarSimboloDeAcesso(usuario) {
     return simbolo
 }
 
-export function UsuarioAutenticacao(req, res, next) {
+export function usuarioAutenticacao(req, res, next) {
     try {
 
-        const auth = req.headers["User-token"]
+        const auth = req.headers["user-token"]
 
         const token = auth
 
-        if (token == "false") throw 401
+        if (token == "false") throw { err, errorCode:401 }
+
+       
 
         jwt.verify(token, secretKey, (err, user) => {
 
-            if (err) throw 403
+            if (err) throw {err, errorCode:403}
 
+            
             req.usuario = user
 
+            next()
 
+            
         })
-
-    } catch (errorCode) {
-
+        
+    } catch ({err,errorCode}) {
+        
+        console.log(err)
         return res.sendStatus(errorCode)
 
     }

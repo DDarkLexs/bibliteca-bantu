@@ -7,17 +7,18 @@ import fs from 'fs-extra'
 import ip from 'ip'
 import ASCIIColorLog from 'ascii-color-log';
 import os from "os"
+import dotenv from "dotenv"
 import routes from './src/routes/index'
 const log = new ASCIIColorLog();
 
 
+dotenv.config()
 const app = express()
-
 app.use(cors())
 
 
-const PORT = 3030
-app.use(cors())
+
+const PORT = 3030 || process.env.PORT
 routes(app)
 
 
